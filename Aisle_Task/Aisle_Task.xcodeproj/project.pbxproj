@@ -124,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				18298D3A2A8F8073004CE84C /* AppDelegate */,
-				18298D422A8F83D9004CE84C /* Custom */,
 				18298D412A8F8383004CE84C /* Extensions */,
 				18298D372A8F8044004CE84C /* AppModels */,
 				18298D392A8F8065004CE84C /* ViewControllers */,
@@ -234,13 +233,6 @@
 				18298D452A8F841E004CE84C /* Extensions.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		18298D422A8F83D9004CE84C /* Custom */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Custom;
 			sourceTree = "<group>";
 		};
 		18298D512A8FCB91004CE84C /* TabBar */ = {

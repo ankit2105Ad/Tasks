@@ -13,27 +13,11 @@ class Networking {
     
     static let shared = Networking.init()
     
-    let APIKey = "fa6d88f84b2b4ae887d152440232807"
     var headers : HTTPHeaders = ["X-Requested-With" : "XMLHttpRequest"]
 
     //MARK: - Check Connectivity
     class func isConnectedToInternet() -> Bool {
         return NetworkReachabilityManager()!.isReachable
-    }
-    
-    func callWebService(endPoint:EndPoint, parameters:inout String, method: HTTPMethod,completion:@escaping (_ response:DataResponse<Any>) -> Void) {
-        
-        var url = path(endPoint)
-        url = "\(url)?key=\(APIKey)\(parameters)"
-
-        debugPrint("RequestURL: \(url)")
-        debugPrint("RequestParam: \(String(describing: parameters))")
-       
-        Alamofire.request(url, method: method).responseJSON { (response :DataResponse<Any>) in
-            // debugPrint(response)
-            debugPrint("Response: \(String(describing: response.data?.printJSON()))")
-            completion((response))
-        }
     }
     
     func callWebService(endPoint:EndPoint,extendedURL:String? = nil,parameters: Parameters? = nil, method: HTTPMethod,completion:@escaping (_ response:DataResponse<Any>) -> Void) -> Void {
